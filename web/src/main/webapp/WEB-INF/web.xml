@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app
-    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-    "http://java.sun.com/dtd/web-app_2_3.dtd">
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
+    <!-- Spring config files -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/applicationContext*.xml
+        </param-value>
+    </context-param>
 
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>de.hpfsc.server.GreetingServiceImpl</servlet-class>
-  </servlet>
+    <!-- filters -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/parent/greet</url-pattern>
-  </servlet-mapping>
+    <!-- listeners -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>parent.html</welcome-file>
-  </welcome-file-list>
+    <!-- servlets -->
+    <servlet>
+        <servlet-name>greetServlet</servlet-name>
+        <servlet-class>de.hpfsc.server.GreetingServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>greetServlet</servlet-name>
+        <url-pattern>/parent/services/greet</url-pattern>
+    </servlet-mapping>
 
+    <!-- default page to serve -->
+    <welcome-file-list>
+        <welcome-file>parent.html</welcome-file>
+    </welcome-file-list>
 </web-app>

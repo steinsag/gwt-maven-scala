@@ -1,16 +1,16 @@
-Scala + GWT + Maven Example
-===========================
+Scala + GWT + Spring Security + Maven Example
+=============================================
 
 Overview
 --------
 
-A working example combining a multi-project maven build together with GWT and a Scala server backend.
+A working example combining a multi-project Maven build together with a GWT client and a Scala server backend, secured via Spring Security.
 
 This example is based on the GWT webapp created by the [Maven GWT Plugin archetype](http://mojo.codehaus.org/gwt-maven-plugin/user-guide/archetype.html).
 
 I have a similar example using only [Java on server side](https://github.com/steinsag/gwt-maven-example), too.
 
-Currently, the example only compiles via Maven. I was not able to get it running in Intellij IDEA 12.
+The example compiles via Maven or in IntelliJ IDEA 12. However, in IntelliJ, you have to disable external compilation in your project settings.
 
 
 Running via Maven in GWT Dev Mode

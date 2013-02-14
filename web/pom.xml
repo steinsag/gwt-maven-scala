@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>web</name>
+    <description>GWT-based web client</description>
+
     <parent>
         <groupId>de.hpfsc</groupId>
         <artifactId>parent</artifactId>
@@ -12,6 +15,10 @@
 
     <artifactId>web</artifactId>
     <packaging>war</packaging>
+
+    <properties>
+        <sonar.language>java</sonar.language>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -76,5 +83,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

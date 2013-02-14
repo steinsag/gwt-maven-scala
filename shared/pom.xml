@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>shared</name>
+    <description>code shared between client and server modules</description>
+
     <parent>
         <groupId>de.hpfsc</groupId>
         <artifactId>parent</artifactId>
@@ -12,6 +15,10 @@
 
     <artifactId>shared</artifactId>
     <packaging>jar</packaging>
+
+    <properties>
+        <sonar.language>java</sonar.language>
+    </properties>
 
     <build>
         <plugins>
@@ -28,5 +35,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

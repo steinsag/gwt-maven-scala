@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <name>server</name>
+    <description>backend code (server side)</description>
+
     <parent>
         <groupId>de.hpfsc</groupId>
         <artifactId>parent</artifactId>
@@ -11,6 +15,10 @@
 
     <artifactId>server</artifactId>
     <packaging>jar</packaging>
+
+    <properties>
+        <sonar.language>scala</sonar.language>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -21,12 +29,12 @@
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scala-library.version}</version>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-compiler</artifactId>
-            <version>${scala-library.version}</version>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
