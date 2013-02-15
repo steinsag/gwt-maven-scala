@@ -9,7 +9,7 @@
 
     <parent>
         <groupId>de.hpfsc</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>gwt-maven-scala</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 

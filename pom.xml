@@ -54,19 +54,6 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.0.0.GA</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.0.0.GA</version>
-            <classifier>sources</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
             <version>${spring-security.version}</version>
@@ -159,6 +146,21 @@ http://maven.apache.org/maven-v4_0_0.xsd">
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- for deployment at Jelastic, see: http://jelastic.com/docs/maven-plugin-jelastic -->
+            <plugin>
+                <groupId>com.jelastic</groupId>
+                <artifactId>jelastic-maven-plugin</artifactId>
+                <version>1.6</version>
+                <configuration>
+                    <email>${jelastic.email}</email>
+                    <password>${jelastic.password}</password>
+                    <environment>${jelastic.environment}</environment>
+                    <api_hoster>${jelastic.api}</api_hoster>
+                    <context>${tomcat.context}</context>
+                    <finalName>${project.build.finalName}</finalName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
