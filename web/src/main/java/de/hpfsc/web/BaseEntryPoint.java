@@ -21,7 +21,7 @@ import de.hpfsc.shared.FieldVerifier;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class parent implements EntryPoint {
+public class BaseEntryPoint implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.

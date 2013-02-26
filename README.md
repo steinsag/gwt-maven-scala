@@ -10,7 +10,7 @@ This example is based on the GWT webapp created by the [Maven GWT Plugin archety
 
 I have a similar example using only [Java on server side](https://github.com/steinsag/gwt-maven-example), too.
 
-The example compiles via Maven or in IntelliJ IDEA 12. However, you have to disable external compilation in your project settings, see [belonging bug report](http://youtrack.jetbrains.com/issue/SCL-5341).
+The example compiles via Maven or in IntelliJ IDEA 12. In IntelliJ IDEA 12, you have to disable external compilation in your project settings, see [belonging bug report](http://youtrack.jetbrains.com/issue/SCL-5341).
 
 
 Running via Maven in GWT Dev Mode
@@ -19,7 +19,7 @@ Running via Maven in GWT Dev Mode
 In order to run the example via Maven in GWT Dev Mode, you need to do:
 
 1. Start the web application in Tomcat 7 via Maven
-2. Start GWT Dev Mode via Mave
+2. Start GWT Dev Mode via Maven
 3. Run the application in your browser
 
 To accomplish the first point, issue the following Maven command on a shell:
@@ -27,7 +27,7 @@ To accomplish the first point, issue the following Maven command on a shell:
     mvn clean install
     mvn tomcat7:run-war-only
 
-Your application is now deployed at http://127.0.0.1:8082/parent/.
+Your application is now deployed at http://127.0.0.1:8082/.
 
 Now, you need to start GWT Dev Mode. Open a second shell and execute:
 
@@ -35,7 +35,7 @@ Now, you need to start GWT Dev Mode. Open a second shell and execute:
 
 On success, the GWT Dev Mode window opens. Click *Launch Default Browser* to open it in GWT Dev Mode.
 
-You can now make changes to your client Java code. Changes become immediately available as soon as you reloaded your page in the browser.
+You can now make changes to your client Java code. Changes become immediately available as soon as you reloaded the page in the browser.
 
 
 Deploying on Jelastic

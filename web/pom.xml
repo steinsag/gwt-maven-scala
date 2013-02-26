@@ -36,6 +36,7 @@
     <build>
         <!-- Generate compiled stuff in the folder used for developing mode -->
         <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <finalName>${project.build.finalName}</finalName>
 
         <plugins>
 
@@ -56,12 +57,11 @@
                 <!-- Plugin configuration. There are many available options, see
                           gwt-maven-plugin documentation at codehaus.org -->
                 <configuration>
-                    <runTarget>parent.html</runTarget>
+                    <runTarget>index.html</runTarget>
                     <draftCompile>true</draftCompile>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <noServer>true</noServer>
                     <port>${tomcat.webport}</port>
-                    <runTarget>${tomcat.context}</runTarget>
                 </configuration>
             </plugin>
 

@@ -34,11 +34,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>greetServlet</servlet-name>
-        <url-pattern>/parent/services/greet</url-pattern>
+        <url-pattern>/index/services/greet</url-pattern>
     </servlet-mapping>
 
     <!-- default page to serve -->
     <welcome-file-list>
-        <welcome-file>parent.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 </web-app>

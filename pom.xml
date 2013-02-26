@@ -30,7 +30,8 @@ http://maven.apache.org/maven-v4_0_0.xsd">
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tomcat.webport>8082</tomcat.webport>
         <tomcat.ajpport>8182</tomcat.ajpport>
-        <tomcat.context>parent</tomcat.context>
+        <tomcat.context></tomcat.context>
+        <project.build.finalName>gwtMavenScala</project.build.finalName>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
     </properties>
 
@@ -87,7 +88,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <warName>${tomcat.context}</warName>
+                    <warName>${project.build.finalName}</warName>
                 </configuration>
             </plugin>
             <plugin>
