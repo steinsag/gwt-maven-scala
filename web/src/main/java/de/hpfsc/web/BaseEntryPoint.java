@@ -8,7 +8,6 @@ import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
@@ -17,6 +16,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import de.hpfsc.shared.FieldVerifier;
+import de.hpfsc.web.layout.BaseLayout;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -42,6 +42,8 @@ public class BaseEntryPoint implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		new BaseLayout();
+
 		final Button sendButton = new Button(messages.sendButton());
 		final TextBox nameField = new TextBox();
 		nameField.setText(messages.nameField());
@@ -152,9 +154,5 @@ public class BaseEntryPoint implements EntryPoint {
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);
-
-		// add logout link
-		RootPanel.get("footer").add(
-				new Anchor("Logout", "/j_spring_security_logout"));
 	}
 }
