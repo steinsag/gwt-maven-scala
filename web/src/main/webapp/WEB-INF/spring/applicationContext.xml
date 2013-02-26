@@ -8,11 +8,12 @@
        http://www.springframework.org/schema/security/spring-security.xsd">
 
     <security:http auto-config="true">
-        <!--<security:intercept-url pattern="/parent/**" access="ROLE_USER"/>-->
         <security:intercept-url pattern="/gwt/**" access="ROLE_USER"/>
         <security:intercept-url pattern="/services/**" access="ROLE_USER"/>
         <security:intercept-url pattern="/**/*.html" access="ROLE_USER"/>
         <security:intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+
+        <security:logout logout-success-url="/spring_security_login"/>
     </security:http>
 
     <bean id="customAuthProvider" class="de.hpfsc.server.security.CustomAuthProvider"/>

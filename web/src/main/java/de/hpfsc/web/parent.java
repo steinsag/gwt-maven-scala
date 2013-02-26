@@ -7,7 +7,6 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Button;
@@ -155,14 +154,7 @@ public class parent implements EntryPoint {
 		nameField.addKeyUpHandler(handler);
 
 		// add logout link
-		Anchor logoutLink = new Anchor("Logout");
-		logoutLink.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				// TODO page is not correctly refreshed after logout and login form is not shown
-				Window.Location.assign("j_spring_security_logout");
-			}
-		});
-		RootPanel.get("footer").add(logoutLink);
+		RootPanel.get("footer").add(
+				new Anchor("Logout", "/j_spring_security_logout"));
 	}
 }
