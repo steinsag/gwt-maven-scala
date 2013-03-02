@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='index'>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+    <inherits name="com.github.gwtbootstrap.Bootstrap" />
+
+    <inherits name="de.hpfsc.shared"/>
+
+    <set-property name="user.agent" value="safari"/>
+
+    <entry-point class='de.hpfsc.web.BaseEntryPoint'/>
+
+    <source path='web'/>
+</module>

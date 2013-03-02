@@ -4,7 +4,7 @@ Scala + GWT + Spring Security + Maven Example
 Overview
 --------
 
-A working example combining a multi-project Maven build together with a GWT client and a Scala server backend, secured via Spring Security.
+A working example combining a multi-project Maven build together with a GWT client (using GWT Bootstrap) and a Scala server backend, secured via Spring Security.
 
 This example is based on the GWT webapp created by the [Maven GWT Plugin archetype](http://mojo.codehaus.org/gwt-maven-plugin/user-guide/archetype.html).
 
@@ -33,9 +33,17 @@ Now, you need to start GWT Dev Mode. Open a second shell and execute:
 
     mvn gwt:run -pl web
 
-On success, the GWT Dev Mode window opens. Click *Launch Default Browser* to open it in GWT Dev Mode.
+On success, the GWT Dev Mode window opens. Click *Launch Default Browser* to open it in GWT Dev Mode. Please note, the build profile only includes support for Google Chrome.
 
 You can now make changes to your client Java code. Changes become immediately available as soon as you reloaded the page in the browser.
+
+
+Building production ready version
+---------------------------------
+
+The default build profile is optimized for short build times. For example, client code is only build for Google Chrome. To create a release, use the production profile instead:
+
+mvn clean install -Pproduction
 
 
 Deploying on Jelastic
@@ -77,6 +85,7 @@ Of course, you have to replace the placeholders with the correct values for your
 
 Afterwards, you can deploy and run this example application via:
 
+    mvn clean install -Pproduction
     mvn jelastic:deploy -Pjelastic
 
 Hint: Before trying upload via Maven, you probably should first try manual deployment via Jelastic web interface to ensure your environment is set up correctly. While deploying, make sure to use context /parent.

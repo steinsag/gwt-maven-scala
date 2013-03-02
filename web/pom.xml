@@ -46,22 +46,38 @@
                 <artifactId>gwt-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>gwt-compile</id>
                         <goals>
                             <goal>compile</goal>
-                            <!--
-                            <goal>test</goal>
-                            -->
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>gwt-test</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <mode>htmlunit</mode>
+                            <module>de.hpfsc.indexTest</module>
+                        </configuration>
                     </execution>
                 </executions>
                 <!-- Plugin configuration. There are many available options, see
                           gwt-maven-plugin documentation at codehaus.org -->
                 <configuration>
                     <runTarget>index.html</runTarget>
-                    <draftCompile>true</draftCompile>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <noServer>true</noServer>
                     <port>${tomcat.webport}</port>
+
+                    <logLevel>INFO</logLevel>
+                    <draftCompile>${gwt.draftCompile}</draftCompile>
+                    <module>${gwt.moduleName}</module>
+                    <optimizationLevel>${gwt.optimizationLevel}</optimizationLevel>
+                    <disableClassMetadata>${gwt.draftCompile}</disableClassMetadata>
+                    <disableCastChecking>${gwt.draftCompile}</disableCastChecking>
+                    <style>${gwt.style}</style>
+                    <localWorkers>4</localWorkers>
                 </configuration>
             </plugin>
 

@@ -10,6 +10,7 @@ import com.github.gwtbootstrap.client.ui.Row;
  */
 public class FooterRow extends Row {
 	public FooterRow() {
+		// TODO i18n
 		final Column footerColumn = new Column(BaseLayout.COLUMNS_12);
 		final NavList footerLinks = new NavList();
 		footerLinks.add(new NavLink("Logout", "/j_spring_security_logout"));

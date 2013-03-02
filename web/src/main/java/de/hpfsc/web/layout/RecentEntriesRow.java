@@ -9,6 +9,7 @@ import com.github.gwtbootstrap.client.ui.Row;
  */
 public class RecentEntriesRow extends Row {
 	public RecentEntriesRow() {
+		// TODO i18n
 		final Column recentEntriesColumn = new Column(BaseLayout.COLUMNS_12);
 		recentEntriesColumn.add(new Paragraph("Recent entries"));
 		this.add(recentEntriesColumn);

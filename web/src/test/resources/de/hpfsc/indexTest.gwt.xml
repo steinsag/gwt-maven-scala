@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <inherits name='de.hpfsc.indexDev' />
+
+  <servlet path="/index/room" class="de.hpfsc.server.api.RoomServiceImpl" />
+</module>
