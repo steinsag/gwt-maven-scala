@@ -41,7 +41,7 @@ public class PostingWidget extends WellForm {
 			public void onClick(ClickEvent event) {
 				String postText = postBox.getText();
 
-				roomService.post(0, postText, new AsyncCallback<Void>() {
+				roomService.post(postText, new AsyncCallback<Void>() {
 					@Override
 					public void onFailure(Throwable caught) {
 						Window.alert("failure: " + caught.getMessage());
